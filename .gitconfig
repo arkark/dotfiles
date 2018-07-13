@@ -1,0 +1,13 @@
+[user]
+    name = Ark
+    email = target.ark@gmail.com
+[core]
+    editor = vim -c \"set fenc=utf-8\"
+[alias]
+    s = status -sb
+    c = commit
+    a = add
+    d = diff
+    l = log --graph --decorate=full --all
+    b = branch
+    co = checkout
