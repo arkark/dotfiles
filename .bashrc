@@ -82,6 +82,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --with-filename --line-number --color=auto'
     alias fgrep='fgrep --with-filename --line-number --color=auto'
     alias egrep='egrep --with-filename --line-number --color=auto'
+    alias diff='diff --color=auto'
 fi
 
 # colored GCC warnings and errors
