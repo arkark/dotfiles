@@ -1,3 +1,8 @@
-! map the CapsLock key to Escape key
+! `xmodmap -pke`
+
+! map the CapsLock key to Escape
 remove Lock = Caps_Lock
 keycode 66 = Escape NoSymbol Escape
+
+! map to underscore even when not pressing Space key
+keycode 97 = underscore underscore underscore underscore
