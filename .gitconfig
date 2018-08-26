@@ -1,13 +1,14 @@
 [user]
-    name = Ark
-    email = target.ark@gmail.com
+  name = Ark
+  email = target.ark@gmail.com
 [core]
-    editor = vim -c \"set fenc=utf-8\"
+  editor = vim -c \"set fenc=utf-8\"
 [alias]
-    s = status -sb
-    c = commit
-    a = add
-    d = diff
-    l = log --graph --decorate=full --all
-    b = branch
-    co = checkout
+  s = status -sb
+  c = commit
+  a = add
+  d = diff
+  sd = !"git difftool -y -x \"colordiff -y -W `tput cols`\""
+  l = log --graph --decorate=full --all --abbrev-commit
+  b = branch
+  co = checkout
