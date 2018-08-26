@@ -31,6 +31,9 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# selenium
+export PATH="$HOME/app/selenium:$PATH"
+
 # pkcrack
 export PATH="$HOME/app/pkcrack-1.2.2/bin:$PATH"
 
