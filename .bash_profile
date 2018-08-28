@@ -43,3 +43,7 @@ export PATH="$HOME/.npm-global/bin:$PATH"
 # composer
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
+# less setting
+# @require: source-highlight
+export LESS=' -R '
+export LESSOPEN='| /usr/share/source-highlight/src-hilite-lesspipe.sh %s'
