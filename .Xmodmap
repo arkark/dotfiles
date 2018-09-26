@@ -8,6 +8,3 @@ keycode 66 = Escape NoSymbol Escape
 ! map to underscore even when not pressing Space key
 keycode 97 = underscore underscore underscore underscore
 
-! PgUp/PgDown
-keycode 112 = NoSymbol Prior NoSymbol Prior
-keycode 117 = NoSymbol Next NoSymbol Next
