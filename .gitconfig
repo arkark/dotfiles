@@ -8,7 +8,11 @@
   c = commit
   a = add
   d = diff
-  sd = !"git difftool -y -x \"colordiff -y -W `tput cols`\""
   l = log --graph --decorate=full --all --abbrev-commit
   b = branch
   co = checkout
+
+  # diff with side-by-side
+  sd = !"git difftool -y -x \"colordiff -y -W `tput cols`\""
+  # show <commit> with side-by-side
+  show-y = !"f(){ git difftool -y -x \"colordiff -y -W `tput cols`\" $1~1 $1; }; f"
