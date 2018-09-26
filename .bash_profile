@@ -31,6 +31,10 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# pip
+USER_BASE_PATH=$(python -m site --user-base)
+export PATH="$USER_BASE_PATH/bin:$PATH"
+
 # selenium
 export PATH="$HOME/app/selenium:$PATH"
 
@@ -47,3 +51,6 @@ export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 # @require: source-highlight
 export LESS=' -R '
 export LESSOPEN='| /usr/share/source-highlight/src-hilite-lesspipe.sh %s'
+
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
