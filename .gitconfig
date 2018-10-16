@@ -9,6 +9,7 @@
   a = add
   d = diff
   l = log --graph --decorate=full --all --abbrev-commit
+  ll = log --graph --decorate=full --all --abbrev-commit --oneline
   b = branch
   co = checkout
 
