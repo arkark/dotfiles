@@ -3,6 +3,12 @@
   email = target.ark@gmail.com
 [core]
   editor = vim -c \"set fenc=utf-8\"
+[difftool]
+  prompt = false
+[difftool "icdiff"]
+  cmd = icdiff --line-numbers $LOCAL $REMOTE
+[difftool "side-by-side-diff"]
+  cmd = colordiff --side-by-side --width=`tput cols` $LOCAL $REMOTE
 [alias]
   s = status -sb
   c = commit
@@ -14,6 +20,9 @@
   co = checkout
 
   # diff with side-by-side
-  sd = !"git difftool -y -x \"colordiff -y -W `tput cols`\""
+  #sd = difftool -t side-diff
+  sd = !"f() { git difftool -t icdiff $@ | less; }; f"
+
   # show <commit> with side-by-side
-  show-y = !"f(){ git difftool -y -x \"colordiff -y -W `tput cols`\" $1~1 $1; }; f"
+  #show-y = !"f(){ rev=${1:-HEAD}; git difftool -t side-diff $rev~1 $rev; }; f"
+  show-y = !"f(){ rev=${1:-HEAD}; git difftool -t icdiff $rev~1 $rev | less; }; f"
