@@ -14,8 +14,8 @@
   c = commit
   a = add
   d = diff
-  l = log --graph --decorate=full --all --abbrev-commit
-  ll = log --graph --decorate=full --all --abbrev-commit --oneline
+  l = !"GIT_PAGER='less -p \"\\(HEAD\"' git log --graph --decorate=full --all --abbrev-commit"
+  ll = !"GIT_PAGER='less -p \"\\(HEAD\"' git log --graph --decorate=full --all --abbrev-commit --oneline"
   b = branch
   co = checkout
 
