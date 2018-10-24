@@ -20,9 +20,6 @@
   co = checkout
 
   # diff with side-by-side
-  #sd = difftool -t side-diff
   sd = !"f() { git difftool -t icdiff $@ | less; }; f"
-
   # show <commit> with side-by-side
-  #show-y = !"f(){ rev=${1:-HEAD}; git difftool -t side-diff $rev~1 $rev; }; f"
-  show-y = !"f(){ rev=${1:-HEAD}; git difftool -t icdiff $rev~1 $rev | less; }; f"
+  show-diff = !"f(){ rev=${1:-HEAD}; git difftool -t icdiff $rev~1 $rev | less; }; f"
