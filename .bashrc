@@ -132,3 +132,5 @@ fi
 # typo
 alias clean="clear"
 alias giit="git"
+alias gits="git s"
+
