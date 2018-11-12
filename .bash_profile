@@ -31,6 +31,10 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 # pip
 USER_BASE_PATH=$(python -m site --user-base)
 export PATH="$USER_BASE_PATH/bin:$PATH"
@@ -54,3 +58,11 @@ export LESSOPEN='| /usr/share/source-highlight/src-hilite-lesspipe.sh %s'
 
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# SDKMAN
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Go
+export PATH="/usr/local/go/bin:$PATH"
+
