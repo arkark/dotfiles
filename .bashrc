@@ -88,24 +88,6 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# # some more ls aliases
-# alias ll='ls -alF'
-# alias la='ls -A'
-# alias l='ls -CF'
-
-# exa
-#   https://github.com/ogham/exa
-alias ls='exa'
-alias ll='exa --long --header --git'
-alias la='exa --long --header --git -a'
-alias l='exa'
-
-# mkcd
-#   mkdir + cd
-function mkcd() {
-  mkdir $@ && cd $_;
-}
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -130,10 +112,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# clipboard commands
-alias pbcopy="xsel --clipboard --input"
-alias pbpaste="xsel --clipboard --output"
-
 # powerline shell
 function _update_ps1() {
     PS1=$(powerline-shell $?)
@@ -142,8 +120,30 @@ if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
+
+# # some more ls aliases
+# alias ll='ls -alF'
+# alias la='ls -A'
+# alias l='ls -CF'
+
+# exa
+#   https://github.com/ogham/exa
+alias ls='exa'
+alias ll='exa --long --header --git'
+alias la='exa --long --header --git -a'
+alias l='exa'
+
+# mkcd
+#   mkdir + cd
+function mkcd() {
+  mkdir $@ && cd $_;
+}
+
+# clipboard commands
+alias pbcopy="xsel --clipboard --input"
+alias pbpaste="xsel --clipboard --output"
+
 # typo
 alias clean="clear"
 alias giit="git"
 alias gits="git s"
-
