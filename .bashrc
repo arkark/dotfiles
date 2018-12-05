@@ -143,6 +143,12 @@ function mkcd() {
 alias pbcopy="xsel --clipboard --input"
 alias pbpaste="xsel --clipboard --output"
 
+# mcfly
+#   https://github.com/cantino/mcfly
+if [ -f $HOME/app/mcfly/mcfly.bash ]; then
+  . $HOME/app/mcfly/mcfly.bash
+fi
+
 # typo
 alias clean="clear"
 alias giit="git"

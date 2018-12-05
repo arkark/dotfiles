@@ -70,3 +70,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # Go
 export PATH="/usr/local/go/bin:$PATH"
 
+# mcfly
+#   https://github.com/cantino/mcfly
+export PATH="$HOME/app/mcfly/target/release:$PATH"
+
