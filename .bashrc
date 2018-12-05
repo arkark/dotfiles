@@ -102,7 +102,9 @@ alias l='exa'
 
 # mkcd
 #   mkdir + cd
-alias mkcd='f() { mkdir $1 && cd $_; }; f'
+function mkcd() {
+  mkdir $@ && cd $_;
+}
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
