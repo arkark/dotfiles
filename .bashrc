@@ -132,6 +132,9 @@ alias ls='exa'
 alias ll='exa --long --header --git'
 alias la='exa --long --header --git -a'
 alias l='exa'
+alias lt='exa --tree'
+alias llt='exa --long --header --git --tree'
+alias lat='exa --long --header --git -a --tree'
 
 # mkcd
 #   mkdir + cd
