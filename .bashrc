@@ -153,6 +153,5 @@ if [ -f $HOME/app/mcfly/mcfly.bash ]; then
 fi
 
 # typo
-alias clean="clear"
 alias giit="git"
 alias gits="git s"
