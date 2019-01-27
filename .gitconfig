@@ -6,9 +6,9 @@
 [difftool]
   prompt = false
 [difftool "icdiff"]
-  cmd = icdiff --line-numbers $LOCAL $REMOTE
+  cmd = icdiff --line-numbers $LOCAL $REMOTE | less
 [difftool "side-by-side-diff"]
-  cmd = colordiff --side-by-side --width=`tput cols` $LOCAL $REMOTE
+  cmd = colordiff --side-by-side --width=`tput cols` $LOCAL $REMOTE | less
 [alias]
   s = status -sb
   c = commit
@@ -20,6 +20,6 @@
   co = checkout
 
   # diff with side-by-side
-  sd = !"f() { git difftool -t icdiff $@ | less; }; f"
+  sd = difftool -t icdiff
   # show <commit> with side-by-side
   show-diff = !"f(){ rev=${1:-HEAD}; git difftool -t icdiff $rev~1 $rev | less; }; f"
