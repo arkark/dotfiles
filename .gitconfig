@@ -15,10 +15,13 @@
   a = add
   d = diff
   l = !"GIT_PAGER='less -p \"\\(HEAD\"' git log --graph --all --date=short --format='%C(yellow)%h%C(reset) %C(magenta)[%ad]%C(reset)%C(auto)%d%C(reset) %s %C(cyan)@%an%C(reset)'"
-  ll = !"GIT_PAGER='less -p \"\\(HEAD\"' git log --graph --decorate=full --all --abbrev-commit"
+  ll = !"GIT_PAGER='less -p \"\\(HEAD\"' git log --graph --decorate=full --all --abbrev-commit --stat-count=5"
   b = branch
   co = checkout
 
+  url = config --get remote.origin.url
+  root = rev-parse --show-toplevel
+  
   # diff with side-by-side
   sd = difftool -t icdiff
   # show <commit> with side-by-side
