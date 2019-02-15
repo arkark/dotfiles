@@ -39,6 +39,11 @@ eval "$(pyenv virtualenv-init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+# goenv
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
+
 # pip
 USER_BASE_PATH=$(python -m site --user-base)
 export PATH="$USER_BASE_PATH/bin:$PATH"
@@ -66,9 +71,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # SDKMAN
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-# Go
-export PATH="/usr/local/go/bin:$PATH"
 
 # mcfly
 #   https://github.com/cantino/mcfly
