@@ -76,3 +76,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 #   https://github.com/cantino/mcfly
 export PATH="$HOME/app/mcfly/target/release:$PATH"
 
+# pdfpc
+export PATH="$HOME/app/pdfpc-4.3.2/build/bin:$PATH"
+
