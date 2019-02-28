@@ -18,11 +18,11 @@
   ll = !"GIT_PAGER='less -p \"\\(HEAD\"' git log --graph --decorate=full --all --abbrev-commit --stat-count=5"
   b = branch
   co = checkout
-
   url = config --get remote.origin.url
-  root = rev-parse --show-toplevel
-  
+  root = rev-parse --show-toplevel 
   # diff with side-by-side
   sd = difftool -t icdiff
   # show <commit> with side-by-side
   show-diff = !"f(){ rev=${1:-HEAD}; git difftool -t icdiff $rev~1 $rev | less; }; f"
+  # remove all ignored files
+  rm-gitignore = !"git rm --cached `git ls-files --full-name --ignored --exclude-from=.gitignore`"
