@@ -152,6 +152,9 @@ if [ -f $HOME/app/mcfly/mcfly.bash ]; then
   . $HOME/app/mcfly/mcfly.bash
 fi
 
+# pdfpc
+alias pdfpc="pdfpc --disable-auto-grouping" # Disable auto detection of overlays
+
 # typo
 alias giit="git"
 alias gits="git s"
