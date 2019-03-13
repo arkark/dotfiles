@@ -57,6 +57,9 @@ export PATH="$HOME/app/pkcrack-1.2.2/bin:$PATH"
 # npm
 export PATH="$HOME/.npm-global/bin:$PATH"
 
+# yarn
+export PATH="$(yarn global bin):$PATH"
+
 # composer
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
