@@ -26,3 +26,6 @@
   show-diff = !"f(){ rev=${1:-HEAD}; git difftool -t icdiff $rev~1 $rev | less; }; f"
   # remove all ignored files
   rm-gitignore = !"git rm --cached `git ls-files --full-name --ignored --exclude-from=.gitignore`"
+
+# custom subcommands
+  # history <file>  :  https://github.com/pomber/git-history
