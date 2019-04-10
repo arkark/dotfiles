@@ -5,6 +5,6 @@
 remove Lock = Caps_Lock
 keycode 66 = Escape NoSymbol Escape
 
-! map to underscore even when not pressing Space key
+! map to underscore even when not pressing Shift key
 keycode 97 = underscore underscore underscore underscore
 
