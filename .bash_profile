@@ -39,10 +39,10 @@ eval "$(pyenv virtualenv-init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-# goenv
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
-eval "$(goenv init -)"
+# golang
+export PATH="/usr/local/go/bin:$PATH"
+export GOPATH="$HOME/.go"
+export PATH="$GOPATH/bin:$PATH"
 
 # pip
 USER_BASE_PATH=$(python -m site --user-base)
