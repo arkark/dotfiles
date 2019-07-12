@@ -10,21 +10,6 @@
 [difftool "side-by-side-diff"]
   cmd = colordiff --side-by-side --width=`tput cols` $LOCAL $REMOTE | less
 [alias]
-  puush = push
-  puuush = push
-  puuuush = push
-  puuuuush = push
-  puuuuuush = push
-  puuuuuuush = push
-  puuuuuuuush = push
-  puuuuuuuuush = push
-  puuuuuuuuuush = push
-  puuuuuuuuuuush = push
-  puuuuuuuuuuuush = push
-  puuuuuuuuuuuuush = push
-  puuuuuuuuuuuuuush = push
-  puuuuuuuuuuuuuuush = push
-  puuuuuuuuuuuuuuuush = push
   s = status -sb
   c = commit
   a = add
