@@ -161,3 +161,10 @@ alias giit="git"
 alias giiit="git"
 alias giiiit="git"
 
+# git
+if [ -f $HOME/.git-completion.bash ]; then
+  . $HOME/.git-completion.bash
+  __git_complete giit __git_main
+  __git_complete giiit __git_main
+  __git_complete giiiit __git_main
+fi
