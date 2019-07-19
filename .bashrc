@@ -160,6 +160,7 @@ alias gits="git s"
 alias giit="git"
 alias giiit="git"
 alias giiiit="git"
+alias code.="code ."
 
 # git
 if [ -f $HOME/.git-completion.bash ]; then
