@@ -57,6 +57,10 @@ export PATH="$HOME/app/pkcrack-1.2.2/bin:$PATH"
 # npm
 export PATH="$HOME/.npm-global/bin:$PATH"
 
+# n - https://github.com/tj/n
+export N_PREFIX="$HOME/.n-prefix"
+export PATH="$N_PREFIX/bin:$PATH"
+
 # composer
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
