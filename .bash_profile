@@ -83,3 +83,6 @@ export PATH="$HOME/app/mcfly/target/release:$PATH"
 # pdfpc
 export PATH="$HOME/app/pdfpc-4.3.2/build/bin:$PATH"
 
+# flutter
+export PATH="$HOME/app/flutter/bin:$PATH"
+
