@@ -7,17 +7,17 @@ if [ ! -d "$HOME/dotfiles" ]; then
     exit 1
 fi
 
-DOT_FILES=(               \\
-    .Xmodmap              \\
-    .bash_profile         \\
-    .bashrc               \\
-    .gdbinit              \\
-    .gitconfig            \\
-    .inputrc              \\
-    .powerline-shell.json \\
-    .prettierignore       \\
-    emmet/snippets.json   \\
-    .config/nvim/init.vim \\
+DOT_FILES=(               \
+    .Xmodmap              \
+    .bash_profile         \
+    .bashrc               \
+    .gdbinit              \
+    .gitconfig            \
+    .inputrc              \
+    .powerline-shell.json \
+    .prettierignore       \
+    emmet/snippets.json   \
+    .config/nvim/init.vim \
 )
 
 for file in ${DOT_FILES[@]}; do
