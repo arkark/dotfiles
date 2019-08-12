@@ -2,7 +2,9 @@
   name = Takeshi Kaneko
   email = target.ark@gmail.com
 [core]
-  editor = vim -c \"set fenc=utf-8\"
+  editor = vim
+[fetch]
+  prune = true
 [difftool]
   prompt = false
 [difftool "icdiff"]
@@ -13,6 +15,7 @@
   s = status -sb
   c = commit
   a = add
+  aa = add -A
   d = diff
   l = !"GIT_PAGER='less -p \"\\(HEAD\"' git log --graph --all --date=short --format='%C(yellow)%h%C(reset) %C(magenta)[%ad]%C(reset)%C(auto)%d%C(reset) %s %C(cyan)@%an%C(reset)'"
   ll = !"GIT_PAGER='less -p \"\\(HEAD\"' git log --graph --decorate=full --all --abbrev-commit --stat-count=5"
@@ -25,7 +28,11 @@
   # show <commit> with side-by-side
   show-diff = !"f(){ rev=${1:-HEAD}; git difftool -t icdiff $rev~1 $rev | less; }; f"
   # remove all ignored files
-  rm-gitignore = !"git rm --cached `git ls-files --full-name --ignored --exclude-from=.gitignore`"
+  rm-gitignore = !git rm --cached `git ls-files --full-name --ignored --exclude-from=.gitignore`
+  # delete all merged branches
+  dmerged = !git branch --merged | egrep -v '^\\*|master$|develop$' | xargs git branch -d
+  # list aliases
+  aliases = !git config --list | grep 'alias\\.' | sed -e 's/^alias\\.\\([^=]*\\)=\\(.*\\)$/  \\1 = \\2/' -e 1i[alias] | bat -p --language=.gitconfig
 
 # custom subcommands
   # history <file>  :  https://github.com/pomber/git-history
