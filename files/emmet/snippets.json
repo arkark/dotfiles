@@ -1,6 +1,10 @@
 {
   "variables": {
-    "lang": "ja",
-    "locale": "ja-JP"
+    "indentation": "  "
+  },
+  "html": {
+    "snippets": {
+      "doc": "html[]>(head>meta[charset=${charset}]+meta:vp+title{${1:Document}})+body"
+    }
   }
 }
