@@ -3,7 +3,7 @@
 set -u
 
 if [ ! -d "$HOME/dotfiles" ]; then
-    echo "Clone dotfiles into $HOME"
+    echo "Clone ArkArk/dotfiles into $HOME"
     exit 1
 fi
 
