@@ -31,7 +31,12 @@
   rm-gitignore = !git rm --cached `git ls-files --full-name --ignored --exclude-from=.gitignore`
   # delete all merged branches
   dmerged = !git branch --merged | egrep -v '^\\*|master$|develop$' | xargs git branch -d
+  # list an output of `git ls-files` in a tree-like format
+  #   treeify: https://github.com/dzamlo/treeify
+  #   $ git tree *.cpp
+  tree = !"f(){ git ls-files $@ | sed -e 's/^\\(.*\\)$/\\.\\/\\1/' | treeify; }; f"
   # list aliases
+  #   bat: https://github.com/sharkdp/bat
   aliases = !git config --list | grep 'alias\\.' | sed -e 's/^alias\\.\\([^=]*\\)=\\(.*\\)$/  \\1 = \\2/' -e 1i[alias] | bat -p --language=.gitconfig
 
 # custom subcommands
