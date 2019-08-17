@@ -101,16 +101,16 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
+# # enable programmable completion features (you don't need to enable
+# # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# # sources /etc/bash.bashrc).
+# if ! shopt -oq posix; then
+#   if [ -f /usr/share/bash-completion/bash_completion ]; then
+#     . /usr/share/bash-completion/bash_completion
+#   elif [ -f /etc/bash_completion ]; then
+#     . /etc/bash_completion
+#   fi
+# fi
 
 # powerline shell
 function _update_ps1() {
@@ -120,21 +120,21 @@ if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
-
-# # some more ls aliases
-# alias ll='ls -alF'
-# alias la='ls -A'
-# alias l='ls -CF'
-
 # exa
 #   https://github.com/ogham/exa
-alias ls='exa'
-alias ll='exa --long --header --git'
-alias la='exa --long --header --git -a'
-alias l='exa'
-alias lt='exa --tree'
-alias llt='exa --long --header --git --tree'
-alias lat='exa --long --header --git -a --tree'
+if type exa >/dev/null 2>&1; then
+  alias ls='exa'
+  alias ll='exa --long --header --git'
+  alias la='exa --long --header --git -a'
+  alias l='exa'
+  alias lt='exa --tree'
+  alias llt='exa --long --header --git --tree'
+  alias lat='exa --long --header --git -a --tree'
+else
+  alias ll='ls -alF'
+  alias la='ls -A'
+  alias l='ls -CF'
+fi
 
 # mkcd
 #   mkdir + cd
@@ -153,6 +153,7 @@ if [ -f $HOME/app/mcfly/mcfly.bash ]; then
 fi
 
 # pdfpc
+#   https://github.com/pdfpc/pdfpc
 alias pdfpc="pdfpc --disable-auto-grouping" # Disable auto detection of overlays
 
 # typo
@@ -162,7 +163,8 @@ alias giiit="git"
 alias giiiit="git"
 alias code.="code ."
 
-# git
+# git completion
+#   https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
 if [ -f $HOME/.git-completion.bash ]; then
   . $HOME/.git-completion.bash
   __git_complete giit __git_main
