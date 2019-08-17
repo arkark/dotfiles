@@ -7,7 +7,7 @@ if [ ! -d "$HOME/dotfiles" ]; then
     exit 1
 fi
 
-# Docker
+# docker
 if type docker >/dev/null 2>&1; then
     echo -e "\e[36m/etc/bash_completion.d/docker\e[0m"
     sudo curl -L https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker -o /etc/bash_completion.d/docker \
@@ -36,9 +36,25 @@ if type yarn >/dev/null 2>&1; then
         && echo -e "\e[32m-> succeeded\e[0m"
 fi
 
-# Cargo
-if type cargo >/dev/null 2>&1; then
+# rustup
+if type rustup >/dev/null 2>&1; then
+    echo -e "\e[36m/etc/bash_completion.d/rustup\e[0m"
+    rustup completions bash rustup > tmp/rustup-completion.bash \
+        && sudo cp tmp/rustup-completion.bash /etc/bash_completion.d/rustup \
+        && echo -e "\e[32m-> succeeded\e[0m"
+fi
+
+# cargo
+if type rustup >/dev/null 2>&1 && type cargo >/dev/null 2>&1; then
     echo -e "\e[36m/etc/bash_completion.d/cargo\e[0m"
-    sudo curl -L https://raw.githubusercontent.com/rust-lang/cargo/master/src/etc/cargo.bashcomp.sh -o /etc/bash_completion.d/cargo \
+    rustup completions bash cargo > tmp/cargo-completion.bash \
+        && sudo cp tmp/cargo-completion.bash /etc/bash_completion.d/cargo \
+        && echo -e "\e[32m-> succeeded\e[0m"
+fi
+
+# dub
+if type dub >/dev/null 2>&1; then
+    echo -e "\e[36m/etc/bash_completion.d/dub\e[0m"
+    sudo curl -L https://raw.githubusercontent.com/dlang/dub/765cf8ea8bec9b8da05e41e4987f1b37f02305bc/scripts/bash-completion/dub.bash -o /etc/bash_completion.d/dub \
         && echo -e "\e[32m-> succeeded\e[0m"
 fi
