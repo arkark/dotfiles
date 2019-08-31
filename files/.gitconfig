@@ -1,45 +1,46 @@
 [user]
-  name = Takeshi Kaneko
-  email = target.ark@gmail.com
+    name = Takeshi Kaneko
+    email = target.ark@gmail.com
 [core]
-  editor = vim
+    editor = vim
 [fetch]
-  prune = true
+    prune = true
 [difftool]
-  prompt = false
+    prompt = false
 [difftool "icdiff"]
-  cmd = icdiff --line-numbers $LOCAL $REMOTE | less
+    cmd = icdiff --line-numbers $LOCAL $REMOTE | less
 [difftool "side-by-side-diff"]
-  cmd = colordiff --side-by-side --width=`tput cols` $LOCAL $REMOTE | less
+    cmd = colordiff --side-by-side --width=`tput cols` $LOCAL $REMOTE | less
 [alias]
-  s = status -sb
-  c = commit
-  a = add
-  aa = add -A
-  d = diff
-  dc = d --cached
-  l = !"GIT_PAGER='less -p \"\\(HEAD\"' git log --graph --all --date=short --format='%C(yellow)%h%C(reset) %C(magenta)[%ad]%C(reset)%C(auto)%d%C(reset) %s %C(cyan)@%an%C(reset)'"
-  ll = !"GIT_PAGER='less -p \"\\(HEAD\"' git log --graph --decorate=full --all --abbrev-commit --stat-count=5"
-  b = branch
-  co = checkout
-  url = config --get remote.origin.url
-  root = rev-parse --show-toplevel
-  # diff with side-by-side
-  sd = difftool -t icdiff
-  sdc = sd --cached
-  # show <commit> with side-by-side
-  show-diff = !"f(){ rev=${1:-HEAD}; git difftool -t icdiff $rev~1 $rev | less; }; f"
-  # remove all ignored files
-  rm-gitignore = !git rm --cached `git ls-files --full-name --ignored --exclude-from=.gitignore`
-  # delete all merged branches
-  dmerged = !git branch --merged | egrep -v '^\\*|master$|develop$' | xargs git branch -d
-  # list an output of `git ls-files` in a tree-like format
-  #   treeify: https://github.com/dzamlo/treeify
-  #   $ git tree *.cpp
-  tree = !"f(){ git ls-files $@ | sed -e 's/^\\(.*\\)$/\\.\\/\\1/' | treeify; }; f"
-  # list aliases
-  #   bat: https://github.com/sharkdp/bat
-  aliases = !git config --list | grep 'alias\\.' | sed -e 's/^alias\\.\\([^=]*\\)=\\(.*\\)$/  \\1 = \\2/' -e 1i[alias] | bat -p --language=.gitconfig
+    s = status -sb
+    c = commit
+    a = add
+    aa = add -A
+    d = diff
+    dc = d --cached
+    l = !"GIT_PAGER='less -p \"\\(HEAD\"' git log --graph --all --date=short --format='%C(yellow)%h%C(reset) %C(magenta)[%ad]%C(reset)%C(auto)%d%C(reset) %s %C(cyan)@%an%C(reset)'"
+    ll = !"GIT_PAGER='less -p \"\\(HEAD\"' git log --graph --decorate=full --all --abbrev-commit --stat-count=5"
+    b = branch
+    co = checkout
+    url = config --get remote.origin.url
+    root = rev-parse --show-toplevel
+    # diff with side-by-side
+    sd = difftool -t icdiff
+    sdc = sd --cached
+    # show <commit> with side-by-side
+    show-diff = !"f(){ rev=${1:-HEAD}; git difftool -t icdiff $rev~1 $rev | less; }; f"
+    # remove all ignored files
+    rm-gitignore = !git rm --cached `git ls-files --full-name --ignored --exclude-from=.gitignore`
+    # delete all merged branches
+    dmerged = !git branch --merged | egrep -v '^\\*|master$|develop$' | xargs git branch -d
+    # list an output of `git ls-files` in a tree-like format
+    #   treeify: https://github.com/dzamlo/treeify
+    #   $ git tree *.cpp
+    tree = !"f(){ git ls-files $@ | sed -e 's/^\\(.*\\)$/\\.\\/\\1/' | treeify; }; f"
+    # list aliases
+    #   bat: https://github.com/sharkdp/bat
+    aliases = !git config --list | grep 'alias\\.' | sed -e 's/^alias\\.\\([^=]*\\)=\\(.*\\)$/  \\1 = \\2/' -e 1i[alias] | bat -p --language=.gitconfig
 
 # custom subcommands
-  # history <file>  :  https://github.com/pomber/git-history
+    # history <file>  :  https://github.com/pomber/git-history
+
