@@ -18,8 +18,8 @@
     aa = add -A
     d = diff
     dc = d --cached
-    l = !"GIT_PAGER='less -p \"\\(HEAD\"' git log --graph --all --date=short --format='%C(yellow)%h%C(reset) %C(magenta)[%ad]%C(reset)%C(auto)%d%C(reset) %s %C(cyan)@%an%C(reset)'"
-    ll = !"GIT_PAGER='less -p \"\\(HEAD\"' git log --graph --decorate=full --all --abbrev-commit --stat-count=5"
+    l = !"GIT_PAGER='less -R -p \"\\(HEAD\"' git log --graph --all --date=short --format='%C(yellow)%h%C(reset) %C(magenta)[%ad]%C(reset)%C(auto)%d%C(reset) %s %C(cyan)@%an%C(reset)'"
+    ll = !"GIT_PAGER='less -R -p \"\\(HEAD\"' git log --graph --decorate=full --all --abbrev-commit --stat-count=5"
     b = branch
     co = checkout
     url = !git config --list | egrep '^remote\\.[^=]+\\.url=' | sed -E -e 's/^remote\\.([^=]*)\\.url=(.*)$/\\1 = \\2/'
