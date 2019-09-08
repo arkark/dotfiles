@@ -22,7 +22,7 @@
     ll = !"GIT_PAGER='less -p \"\\(HEAD\"' git log --graph --decorate=full --all --abbrev-commit --stat-count=5"
     b = branch
     co = checkout
-    url = config --get remote.origin.url
+    url = !git config --list | egrep '^remote\\.[^=]+\\.url=' | sed -E -e 's/^remote\\.([^=]*)\\.url=(.*)$/\\1 = \\2/'
     root = rev-parse --show-toplevel
     # diff with side-by-side
     sd = difftool -t icdiff
@@ -39,7 +39,7 @@
     tree = !"f(){ git ls-files $@ | sed -e 's/^\\(.*\\)$/\\.\\/\\1/' | treeify; }; f"
     # list aliases
     #   bat: https://github.com/sharkdp/bat
-    aliases = !git config --list | grep 'alias\\.' | sed -e 's/^alias\\.\\([^=]*\\)=\\(.*\\)$/  \\1 = \\2/' -e 1i[alias] | bat -p --language=.gitconfig
+    aliases = !git config --list | grep 'alias\\.' | sed -E -e 's/^alias\\.([^=]*)=(.*)$/  \\1 = \\2/' -e 1i[alias] | bat -p --language=.gitconfig
 
 # custom subcommands
     # history <file>  :  https://github.com/pomber/git-history
