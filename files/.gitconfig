@@ -27,19 +27,22 @@
     # diff with side-by-side
     sd = difftool -t icdiff
     sdc = sd --cached
-    # show <commit> with side-by-side
-    show-diff = !"f(){ rev=${1:-HEAD}; git difftool -t icdiff $rev~1 $rev | less; }; f"
-    # remove all ignored files
+    # Show <commit> with side-by-side
+    show-diff = !"f() { rev=${1:-HEAD}; git difftool -t icdiff $rev~1 $rev | less; }; f"
+    # Remove all ignored files
     rm-gitignore = !git rm --cached `git ls-files --full-name --ignored --exclude-from=.gitignore`
-    # delete all merged branches
+    # Delete all merged branches
     dmerged = !git branch --merged | egrep -v '^\\*|master$|develop$' | xargs git branch -d
-    # list an output of `git ls-files` in a tree-like format
+    # List an output of `git ls-files` in a tree-like format
     #   treeify: https://github.com/dzamlo/treeify
     #   $ git tree *.cpp
-    tree = !"f(){ git ls-files $@ | sed -e 's/^\\(.*\\)$/\\.\\/\\1/' | treeify; }; f"
-    # list aliases
+    tree = !"f() { git ls-files $@ | sed -e 's/^\\(.*\\)$/\\.\\/\\1/' | treeify; }; f"
+    # List aliases
     #   bat: https://github.com/sharkdp/bat
     aliases = !git config --list | grep 'alias\\.' | sed -E -e 's/^alias\\.([^=]*)=(.*)$/  \\1 = \\2/' -e 1i[alias] | bat -p --language=.gitconfig
+    # Select a file path
+    #   $ rm $(git select 1) # Remove 1st file from git status
+    select = !"f() { git s | sed -n -e '2,$p' | cut -d ' ' -f 2 | sed -n -e \"${1}p\"; }; f"
 
 # custom subcommands
     # history <file>  :  https://github.com/pomber/git-history
