@@ -22,6 +22,7 @@
     ll = !"GIT_PAGER='less -R -p \"\\(HEAD\"' git log --graph --decorate=full --all --abbrev-commit --stat-count=5"
     b = branch
     co = checkout
+    m = merge
     url = !git config --list | egrep '^remote\\.[^=]+\\.url=' | sed -E -e 's/^remote\\.([^=]*)\\.url=(.*)$/\\1 = \\2/'
     root = rev-parse --show-toplevel
     # diff with side-by-side
