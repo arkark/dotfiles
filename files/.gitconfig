@@ -43,7 +43,7 @@
     aliases = !git config --list | grep 'alias\\.' | sed -E -e 's/^alias\\.([^=]*)=(.*)$/  \\1 = \\2/' -e 1i[alias] | bat -p --language=.gitconfig
     # Select a file path
     #   $ rm $(git select 1) # Remove 1st file from git status
-    select = !"f() { git s | sed -n -e '2,$p' | cut -d ' ' -f 2 | sed -n -e \"${1}p\"; }; f"
+	select = !"f() { git status -s | sed -E -e 's/^.{3}([^ ]*)$/\\1/' | sed -n -e \"${1}p\"; }; f"
 
 # custom subcommands
     # history <file>  :  https://github.com/pomber/git-history
