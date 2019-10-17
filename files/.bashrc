@@ -156,6 +156,24 @@ fi
 #   https://github.com/pdfpc/pdfpc
 alias pdfpc="pdfpc --disable-auto-grouping" # Disable auto detection of overlays
 
+# convert mp4 to gif with gifski
+#   https://github.com/ImageOptim/gifski
+function mp42gif() {
+  if [ $# -ne 2 ]; then
+    echo "Usage: "
+    echo "    mp42gif <INPUT_FILE> <OUTPUT_FILE>"
+    return 1
+  fi
+  (
+    set -eux
+    local tmpdir=$(mktemp -d --tmpdir mp42gif.XXXXXXXXXX)
+    ffmpeg -i "$1" -an -r 30 $tmpdir/%04d.png
+    gifski -o $tmpdir/tmp.gif --fps 30 $tmpdir/*.png
+    gifsicle -i $tmpdir/tmp.gif -O3 --colors 256 -o "$2"
+    rm -r "$tmpdir"
+  )
+}
+
 # typo
 alias gits="git s"
 alias giit="git"
