@@ -180,6 +180,7 @@ alias giit="git"
 alias giiit="git"
 alias giiiit="git"
 alias code.="code ."
+alias ks="ls"
 
 # git completion
 #   https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
