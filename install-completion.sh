@@ -58,3 +58,11 @@ if type dub >/dev/null 2>&1; then
     sudo curl -L https://raw.githubusercontent.com/dlang/dub/765cf8ea8bec9b8da05e41e4987f1b37f02305bc/scripts/bash-completion/dub.bash -o /etc/bash_completion.d/dub \
         && echo -e "\e[32m-> succeeded\e[0m"
 fi
+
+# aws-cli
+if type aws_completer > /dev/null 2>&1; then
+    echo -e "\e[36m/etc/bash_completion.d/aws\e[0m"
+    echo "complete -C '$(which aws_completer)' aws" | sudo tee /etc/bash_completion.d/aws > /dev/null \
+        && echo -e "\e[32m-> succeeded\e[0m"
+fi
+
