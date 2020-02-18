@@ -152,9 +152,18 @@ if [ -f $HOME/app/mcfly/mcfly.bash ]; then
   . $HOME/app/mcfly/mcfly.bash
 fi
 
+# enhancd
+#   https://github.com/b4b4r07/enhancd
+if [ -f $HOME/app/enhancd/init.sh ]; then
+  . $HOME/app/enhancd/init.sh
+fi
+
 # pdfpc
 #   https://github.com/pdfpc/pdfpc
 alias pdfpc="pdfpc --disable-auto-grouping" # Disable auto detection of overlays
+
+# SDKMAN
+[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 
 # convert mp4 to gif with gifski
 #   https://github.com/ImageOptim/gifski

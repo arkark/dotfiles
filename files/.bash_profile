@@ -70,14 +70,21 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # SDKMAN
 export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # mcfly
 #   https://github.com/cantino/mcfly
 export PATH="$HOME/app/mcfly/target/release:$PATH"
+
+# enhancd
+#   https://github.com/b4b4r07/enhancd
+export ENHANCD_DISABLE_DOT=1
 
 # pdfpc
 export PATH="$HOME/app/pdfpc-4.3.2/build/bin:$PATH"
 
 # flutter
 export PATH="$HOME/app/flutter/bin:$PATH"
+
+# dlang
+export PATH="$HOME/dlang/dmd-2.089.0/linux/bin64:$PATH"
+
