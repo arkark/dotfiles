@@ -78,6 +78,7 @@ export PATH="$HOME/app/mcfly/target/release:$PATH"
 # enhancd
 #   https://github.com/b4b4r07/enhancd
 export ENHANCD_DISABLE_DOT=1
+export ENHANCD_DISABLE_HOME=1
 
 # pdfpc
 export PATH="$HOME/app/pdfpc-4.3.2/build/bin:$PATH"
