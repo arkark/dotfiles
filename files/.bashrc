@@ -183,6 +183,9 @@ function mp42gif() {
   )
 }
 
+# shortcut commands
+alias e="exit"
+
 # typo
 alias gits="git s"
 alias giit="git"
