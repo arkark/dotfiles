@@ -14,7 +14,6 @@ DOT_FILES=(               \
     .gdbinit              \
     .gitconfig            \
     .inputrc              \
-    .powerline-shell.json \
     .emmet/snippets.json   \
     .config/nvim/init.vim \
 )

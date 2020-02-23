@@ -112,12 +112,15 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# powerline shell
+# powerline-go
+#   https://github.com/justjanne/powerline-go
 function _update_ps1() {
-    PS1=$(powerline-shell $?)
+  local exit_code="$?"
+  local modules="venv,user,ssh,cwd,perms,git,hg,jobs,time,exit"
+  PS1="$($GOPATH/bin/powerline-go -error $exit_code -shell bash -cwd-mode plain -newline -numeric-exit-codes -modules $modules)"
 }
-if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
-    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
+  PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
 # exa
