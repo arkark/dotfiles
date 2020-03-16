@@ -188,6 +188,7 @@ function mp42gif() {
 
 # shortcut commands
 alias e="exit"
+alias g="git"
 
 # typo
 alias gits="git s"
@@ -204,4 +205,5 @@ if [ -f $HOME/.git-completion.bash ]; then
   __git_complete giit __git_main
   __git_complete giiit __git_main
   __git_complete giiiit __git_main
+  __git_complete g __git_main
 fi
