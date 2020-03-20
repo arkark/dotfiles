@@ -139,6 +139,11 @@ else
   alias l='ls -CF'
 fi
 
+# bat
+if type bat >/dev/null 2>&1; then
+  alias cat="bat -pp"
+fi
+
 # mkcd
 #   mkdir + cd
 function mkcd() {
