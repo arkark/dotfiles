@@ -47,13 +47,13 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
+    # We have color support; assume it's compliant with Ecma-48
+    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+    # a case would tend to support setf rather than setaf.)
+    color_prompt=yes
+        else
+    color_prompt=
+        fi
 fi
 
 if [ "$color_prompt" = yes ]; then
@@ -105,49 +105,49 @@ fi
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+    fi
 fi
 
 # powerline-go
 #   https://github.com/justjanne/powerline-go
 function _update_ps1() {
-  local exit_code="$?"
-  local modules="venv,user,ssh,cwd,perms,git,hg,jobs,time,exit"
-  PS1="$($GOPATH/bin/powerline-go -error $exit_code -shell bash -cwd-mode plain -newline -numeric-exit-codes -modules $modules)"
+    local exit_code="$?"
+    local modules="venv,user,ssh,cwd,perms,git,hg,jobs,time,exit"
+    PS1="$($GOPATH/bin/powerline-go -error $exit_code -shell bash -cwd-mode plain -newline -numeric-exit-codes -modules $modules)"
 }
 if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
-  PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
 # exa
 #   https://github.com/ogham/exa
 if type exa >/dev/null 2>&1; then
-  alias ls='exa'
-  alias ll='exa --long --header --git'
-  alias la='exa --long --header --git -a'
-  alias l='exa'
-  alias lt='exa --tree'
-  alias llt='exa --long --header --git --tree'
-  alias lat='exa --long --header --git -a --tree'
+    alias ls='exa'
+    alias ll='exa --long --header --git'
+    alias la='exa --long --header --git -a'
+    alias l='exa'
+    alias lt='exa --tree'
+    alias llt='exa --long --header --git --tree'
+    alias lat='exa --long --header --git -a --tree'
 else
-  alias ll='ls -alF'
-  alias la='ls -A'
-  alias l='ls -CF'
+    alias ll='ls -alF'
+    alias la='ls -A'
+    alias l='ls -CF'
 fi
 
 # bat
 if type bat >/dev/null 2>&1; then
-  alias cat="bat -pp"
+    alias cat="bat -pp"
 fi
 
 # mkcd
 #   mkdir + cd
 function mkcd() {
-  mkdir $@ && cd $_;
+    mkdir $@ && cd $_;
 }
 
 # clipboard commands
@@ -157,13 +157,13 @@ alias pbpaste="xsel --clipboard --output"
 # mcfly
 #   https://github.com/cantino/mcfly
 if [ -f $HOME/app/mcfly/mcfly.bash ]; then
-  . $HOME/app/mcfly/mcfly.bash
+    . $HOME/app/mcfly/mcfly.bash
 fi
 
 # enhancd
 #   https://github.com/b4b4r07/enhancd
 if [ -f $HOME/app/enhancd/init.sh ]; then
-  . $HOME/app/enhancd/init.sh
+    . $HOME/app/enhancd/init.sh
 fi
 
 # pdfpc
@@ -176,19 +176,19 @@ alias pdfpc="pdfpc --disable-auto-grouping" # Disable auto detection of overlays
 # convert mp4 to gif with gifski
 #   https://github.com/ImageOptim/gifski
 function mp42gif() {
-  if [ $# -ne 2 ]; then
-    echo "Usage: "
-    echo "    mp42gif <INPUT_FILE> <OUTPUT_FILE>"
-    return 1
-  fi
-  (
-    set -eux
-    local tmpdir=$(mktemp -d --tmpdir mp42gif.XXXXXXXXXX)
-    ffmpeg -i "$1" -an -r 30 $tmpdir/%04d.png
-    gifski -o $tmpdir/tmp.gif --fps 30 $tmpdir/*.png
-    gifsicle -i $tmpdir/tmp.gif -O3 --colors 256 -o "$2"
-    rm -r "$tmpdir"
-  )
+    if [ $# -ne 2 ]; then
+        echo "Usage: "
+        echo "    mp42gif <INPUT_FILE> <OUTPUT_FILE>"
+        return 1
+    fi
+    (
+        set -eux
+        local tmpdir=$(mktemp -d --tmpdir mp42gif.XXXXXXXXXX)
+        ffmpeg -i "$1" -an -r 30 $tmpdir/%04d.png
+        gifski -o $tmpdir/tmp.gif --fps 30 $tmpdir/*.png
+        gifsicle -i $tmpdir/tmp.gif -O3 --colors 256 -o "$2"
+        rm -r "$tmpdir"
+    )
 }
 
 # shortcut commands
@@ -206,9 +206,9 @@ alias ks="ls"
 # git completion
 #   https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
 if [ -f $HOME/.git-completion.bash ]; then
-  . $HOME/.git-completion.bash
-  __git_complete giit __git_main
-  __git_complete giiit __git_main
-  __git_complete giiiit __git_main
-  __git_complete g __git_main
+    . $HOME/.git-completion.bash
+    __git_complete giit __git_main
+    __git_complete giiit __git_main
+    __git_complete giiiit __git_main
+    __git_complete g __git_main
 fi
