@@ -144,16 +144,6 @@ if type bat >/dev/null 2>&1; then
     alias cat="bat -pp"
 fi
 
-# mkcd
-#   mkdir + cd
-function mkcd() {
-    mkdir $@ && cd $_;
-}
-
-# clipboard commands
-alias pbcopy="xsel --clipboard --input"
-alias pbpaste="xsel --clipboard --output"
-
 # mcfly
 #   https://github.com/cantino/mcfly
 if [ -f $HOME/app/mcfly/mcfly.bash ]; then
@@ -189,6 +179,17 @@ function mp42gif() {
         gifsicle -i $tmpdir/tmp.gif -O3 --colors 256 -o "$2"
         rm -r "$tmpdir"
     )
+}
+
+# util
+function mkcd() {
+    mkdir $@ && cd $_;
+}
+alias pbcopy="xsel --clipboard --input"
+alias pbpaste="xsel --clipboard --output"
+function gcd() {
+    git rev-parse --show-toplevel > /dev/null && \
+        cd "$(git rev-parse --show-toplevel)/$@"
 }
 
 # shortcut commands
