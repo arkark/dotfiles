@@ -27,7 +27,8 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 # pyenv
-export PATH="$HOME/.pyenv/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
