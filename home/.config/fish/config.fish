@@ -81,13 +81,6 @@ if type starship >/dev/null 2>&1
     starship init fish | source
 end
 
-# enhancd
-#   https://github.com/b4b4r07/enhancd
-if type enhancd >/dev/null 2>&1
-    set -x ENHANCD_DISABLE_DOT 1
-    set -x ENHANCD_DISABLE_HOME 1
-end
-
 # exa
 #   https://github.com/ogham/exa
 if type exa >/dev/null 2>&1
