@@ -1,0 +1,27 @@
+prompt_order = [
+    "username",
+    "hostname",
+    "kubernetes",
+    "directory",
+    "git_branch",
+    "git_commit",
+    "git_state",
+    "git_status",
+    "hg_branch",
+    "docker_context",
+    "cmd_duration",
+    "time",
+    "line_break",
+    "jobs",
+    "battery",
+    "character",
+]
+
+[directory]
+truncation_length = 3
+truncate_to_repo = false
+fish_style_pwd_dir_length = 1
+
+[time]
+disabled = false
+style = "#aaaaaa"

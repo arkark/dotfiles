@@ -1,24 +1,26 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -u
 
 if [ ! -d "$HOME/dotfiles" ]; then
-    echo "Clone ArkArk/dotfiles into $HOME"
+    echo "Clone arkark/dotfiles into $HOME"
     exit 1
 fi
 
-DOT_FILES=(               \
-    .Xmodmap              \
-    .bash_profile         \
-    .bashrc               \
-    .gdbinit              \
-    .gitconfig            \
-    .inputrc              \
-    .emmet/snippets.json   \
-    .config/nvim/init.vim \
+DOT_PATHS=(                  \
+    .Xmodmap                 \
+    .bash_profile            \
+    .bashrc                  \
+    .gdbinit                 \
+    .gitconfig               \
+    .inputrc                 \
+    .emmet/snippets.json     \
+    .config/nvim             \
+    .config/fish/config.fish \
+    .config/starship.toml    \
 )
 
-for file in ${DOT_FILES[@]}; do
-    mkdir -p $(dirname $HOME/$file)
-    ln -sni $HOME/dotfiles/files/$file $HOME/$file
+for path in ${DOT_PATHS[@]}; do
+    mkdir -p $(dirname $HOME/$path)
+    ln -sni $HOME/dotfiles/home/$path $HOME/$path
 done
