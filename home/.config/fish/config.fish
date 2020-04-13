@@ -113,7 +113,6 @@ end
 #   https://github.com/ImageOptim/gifski
 function mp42gif --description "Convert mp4 to gif with gifski"
     if test (count $argv) -ne 2
-        then
         echo "Usage: "
         echo "    mp42gif <INPUT_FILE> <OUTPUT_FILE>"
         return 1
