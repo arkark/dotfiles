@@ -45,12 +45,6 @@ export PATH="$GOPATH/bin:$PATH"
 USER_BASE_PATH=$(python -m site --user-base)
 export PATH="$USER_BASE_PATH/bin:$PATH"
 
-# selenium
-export PATH="$HOME/app/selenium:$PATH"
-
-# pkcrack
-export PATH="$HOME/app/pkcrack-1.2.2/bin:$PATH"
-
 # npm
 export PATH="$HOME/.npm-global/bin:$PATH"
 
@@ -72,21 +66,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # SDKMAN
 export SDKMAN_DIR="$HOME/.sdkman"
 
-# mcfly
-#   https://github.com/cantino/mcfly
-export PATH="$HOME/app/mcfly/target/release:$PATH"
-
-# enhancd
-#   https://github.com/b4b4r07/enhancd
-export ENHANCD_DISABLE_DOT=1
-export ENHANCD_DISABLE_HOME=1
-
-# pdfpc
-export PATH="$HOME/app/pdfpc-4.3.2/build/bin:$PATH"
-
-# flutter
-export PATH="$HOME/app/flutter/bin:$PATH"
-
 # dlang
 export PATH="$HOME/dlang/dmd-2.089.0/linux/bin64:$PATH"
 
+export PATH="$HOME/app/bin:$PATH"

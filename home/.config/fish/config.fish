@@ -8,6 +8,10 @@ if test -d $HOME/.local/bin
     set -x PATH $HOME/.local/bin $PATH
 end
 
+if test -d $HOME/app/bin
+    set -x PATH $HOME/app/bin $PATH
+end
+
 # pyenv
 if test -d $HOME/.pyenv
     set -x PYENV_ROOT $HOME/.pyenv
@@ -50,29 +54,11 @@ if type n >/dev/null 2>&1
     set -x PATH $N_PREFIX/bin $PATH
 end
 
-if test -d $HOME/app
-    # selenium
-    if test -d $HOME/app/selenium
-        set -x PATH $HOME/app/selenium $PATH
-    end
-    # pkcrack
-    if test -d $HOME/app/pkcrack-1.2.2/bin
-        set -x PATH $HOME/app/pkcrack-1.2.2/bin $PATH
-    end
-    # pdfpc
-    if test -d $HOME/app/pdfpc-4.3.2/build/bin
-        set -x PATH $HOME/app/pdfpc-4.3.2/build/bin $PATH
-    end
-    # flutter
-    if test -d $HOME/app/flutter/bin
-        set -x PATH $HOME/app/flutter/bin $PATH
-    end
-    # pdfpc
-    #   https://github.com/pdfpc/pdfpc
-    if test -d $HOME/app/pdfpc-4.3.2/build/bin
-        set -x PATH $HOME/app/pdfpc-4.3.2/build/bin $PATH
-        alias pdfpc="pdfpc --disable-auto-grouping" # Disable auto detection of overlays
-    end
+# pdfpc
+#   https://github.com/pdfpc/pdfpc
+if type pdfpc >/dev/null 2>&1
+    # Disable auto detection of overlays
+    alias pdfpc="pdfpc --disable-auto-grouping"
 end
 
 # starship

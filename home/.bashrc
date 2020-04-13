@@ -150,12 +150,6 @@ if [ -f $HOME/app/mcfly/mcfly.bash ]; then
     . $HOME/app/mcfly/mcfly.bash
 fi
 
-# enhancd
-#   https://github.com/b4b4r07/enhancd
-if [ -f $HOME/app/enhancd/init.sh ]; then
-    . $HOME/app/enhancd/init.sh
-fi
-
 # pdfpc
 #   https://github.com/pdfpc/pdfpc
 alias pdfpc="pdfpc --disable-auto-grouping" # Disable auto detection of overlays
