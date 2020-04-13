@@ -8,9 +8,9 @@
 [difftool]
     prompt = false
 [difftool "icdiff"]
-    cmd = icdiff --line-numbers $LOCAL $REMOTE | less
+    cmd = GIT_PAGER='less -+F' icdiff --line-numbers $LOCAL $REMOTE
 [difftool "side-by-side-diff"]
-    cmd = colordiff --side-by-side --width=`tput cols` $LOCAL $REMOTE | less
+    cmd = GIT_PAGER='less -+F' colordiff --side-by-side --width=`tput cols` $LOCAL $REMOTE
 [alias]
     s = status -sb
     c = commit
@@ -18,8 +18,8 @@
     aa = add -A
     d = diff
     dc = d --cached
-    l = !"GIT_PAGER='less -R -p \"\\(HEAD\"' git log --graph --all --date=short --format='%C(yellow)%h%C(reset) %C(magenta)[%ad]%C(reset)%C(auto)%d%C(reset) %s %C(cyan)@%an%C(reset)'"
-    ll = !"GIT_PAGER='less -R -p \"\\(HEAD\"' git log --graph --decorate=full --all --abbrev-commit --stat-count=5"
+    l = !"GIT_PAGER='less -+F -p \"\\(HEAD\"' git log --graph --all --date=short --format='%C(yellow)%h%C(reset) %C(magenta)[%ad]%C(reset)%C(auto)%d%C(reset) %s %C(cyan)@%an%C(reset)'"
+    ll = !"GIT_PAGER='less -+F -p \"\\(HEAD\"' git log --graph --decorate=full --all --abbrev-commit --stat-count=5"
     b = branch
     co = checkout
     sw = switch
