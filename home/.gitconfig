@@ -5,6 +5,8 @@
     editor = vim
 [fetch]
     prune = true
+[push]
+	default = current
 [difftool]
     prompt = false
 [difftool "icdiff"]
