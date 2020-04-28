@@ -137,8 +137,4 @@ alias ks="ls"
 
 # fish settings
 function fish_greeting
-    if type toilet >/dev/null 2>&1
-        echo
-        toilet -f pagga -F border -F gay "Hello, fish! "
-    end
 end
