@@ -124,6 +124,11 @@ function mp42gif --description "Convert mp4 to gif with gifski"
         rm -r $tmpdir
 end
 
+# utils
+if type nvim >/dev/null 2>&1
+    alias vim="nvim"
+end
+
 # shortcut commands
 alias e="exit"
 alias g="git"
