@@ -129,6 +129,11 @@ if test -d /usr/local/opt/gnu-sed/libexec/gnubin
     set -x PATH /usr/local/opt/gnu-sed/libexec/gnubin $PATH
 end
 
+# xargs
+if man xargs | grep GNU -q
+    set -x XARGS_NO_RUN_IF_EMPTY --no-run-if-empty
+end
+
 # utils
 if type nvim >/dev/null 2>&1
     alias vim="nvim"
