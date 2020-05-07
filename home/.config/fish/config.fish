@@ -124,6 +124,11 @@ function mp42gif --description "Convert mp4 to gif with gifski"
         rm -r $tmpdir
 end
 
+# gsed
+if test -d /usr/local/opt/gnu-sed/libexec/gnubin
+    set -x PATH /usr/local/opt/gnu-sed/libexec/gnubin $PATH
+end
+
 # utils
 if type nvim >/dev/null 2>&1
     alias vim="nvim"
