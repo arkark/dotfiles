@@ -5,12 +5,18 @@ if ! test -d $HOME/dotfiles
     exit 1
 end
 
-# docker
 # npm
 # yarn
 # rustup
 # cargo
 # aws-cli
+
+# docker
+if type docker >/dev/null 2>&1
+    echo -e "\e[36m ~/.config/fish/completions/docker.fish\e[0m"
+    curl -L https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/fish/docker.fish -o ~/.config/fish/completions/docker.fish \
+        && echo -e "\e[32m-> succeeded\e[0m"
+end
 
 # docker-compose
 if type docker-compose >/dev/null 2>&1
