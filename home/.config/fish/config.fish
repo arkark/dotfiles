@@ -56,6 +56,11 @@ if type n >/dev/null 2>&1
     set -x PATH $N_PREFIX/bin $PATH
 end
 
+# GCP
+if test -d /usr/local/Caskroom/google-cloud-sdk
+    source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
+end
+
 # pdfpc
 #   https://github.com/pdfpc/pdfpc
 if type pdfpc >/dev/null 2>&1
