@@ -14,6 +14,7 @@ DOT_PATHS=(                  \
     .gdbinit                 \
     .gitconfig               \
     .inputrc                 \
+    .imwheelrc               \
     .emmet/snippets.json     \
     .config/nvim             \
     .config/fish/config.fish \
