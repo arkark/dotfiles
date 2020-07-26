@@ -34,7 +34,7 @@
     sd = difftool -t icdiff
     sdc = sd --cached
     # Show <commit> with side-by-side
-    show-diff = !"f() { rev=${1:-HEAD}; git difftool -t icdiff $rev~1 $rev | less; }; f"
+    show-diff = !"f() { rev=${1:-HEAD}; git difftool -t icdiff $rev~1 $rev | bat -p; }; f"
     # Remove all ignored files
     rm-gitignore = !git rm --cached `git ls-files --full-name --ignored --exclude-from=.gitignore`
     # Delete all merged branches
