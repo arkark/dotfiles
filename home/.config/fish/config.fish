@@ -141,6 +141,15 @@ if man xargs | grep GNU -q
     set -x XARGS_NO_RUN_IF_EMPTY --no-run-if-empty
 end
 
+# mouse speed
+if type xinput >/dev/null 2>&1
+    if xinput list | grep -q "Logitech MX Ergo"
+        set mouse_speed 1.9
+        xinput set-prop "pointer:Logitech MX Ergo" "Coordinate Transformation Matrix" $mouse_speed, 0, 0, 0, $mouse_speed, 0, 0, 0, 1
+        set -e mouse_speed
+    end
+end
+
 # utils
 if type nvim >/dev/null 2>&1
     alias vim="nvim"
