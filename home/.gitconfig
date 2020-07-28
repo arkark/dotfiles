@@ -12,7 +12,7 @@
 [difftool]
     prompt = false
 [difftool "icdiff"]
-    cmd = GIT_PAGER='less -+F' icdiff --line-numbers $LOCAL $REMOTE
+    cmd = icdiff --line-numbers $LOCAL $REMOTE
 [difftool "side-by-side-diff"]
     cmd = GIT_PAGER='less -+F' colordiff --side-by-side --width=`tput cols` $LOCAL $REMOTE
 [alias]
