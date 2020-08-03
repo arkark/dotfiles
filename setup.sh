@@ -13,6 +13,7 @@ DOT_PATHS=(                  \
     .bashrc                  \
     .gdbinit                 \
     .gitconfig               \
+    .gitignore_global        \
     .inputrc                 \
     .imwheelrc               \
     .emmet/snippets.json     \
