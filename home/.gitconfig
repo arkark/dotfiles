@@ -52,4 +52,5 @@
     select = !"f() { git status -s | sed -E -e 's/^.{3}([^ ]*)$/\\1/' | sed -n -e \"${1}p\"; }; f"
 
 # custom subcommands
-    # history <file>  :  https://github.com/pomber/git-history
+    # history <file>                                  : https://github.com/pomber/git-history
+    # exec --revision|-r <rev> <command> [<args> ...] : https://github.com/10sr/git-exec
