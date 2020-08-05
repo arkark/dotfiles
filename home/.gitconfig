@@ -28,7 +28,6 @@
     b = branch
     co = checkout
     sw = switch
-    m = merge
     url = !git config --list | egrep '^remote\\.[^=]+\\.url=' | sed -E -e 's/^remote\\.([^=]*)\\.url=(.*)$/\\1 = \\2/'
     root = rev-parse --show-toplevel
     # diff with side-by-side
