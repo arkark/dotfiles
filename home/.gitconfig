@@ -3,13 +3,13 @@
     email = target.ark@gmail.com
 [core]
     editor = vim
-	excludesfile = ~/.gitignore_global
+    excludesfile = ~/.gitignore_global
 [fetch]
     prune = true
 [push]
-	default = current
+    default = current
 [pull]
-	ff = only
+    ff = only
 [difftool]
     prompt = false
 [difftool "icdiff"]
