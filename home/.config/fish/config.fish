@@ -40,6 +40,8 @@ end
 # Go
 if test -d /usr/local/go/bin
     set -x PATH /usr/local/go/bin $PATH
+end
+if type go >/dev/null 2>&1
     set -x GOPATH $HOME/.go
     set -x PATH $GOPATH/bin $PATH
 end
