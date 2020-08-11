@@ -7,7 +7,3 @@ keycode 66 = Escape NoSymbol Escape
 
 ! map to underscore even when not pressing Shift key
 keycode 97 = underscore underscore underscore underscore
-
-! map ShiftR key to underscore
-remove shift = Shift_R
-keycode 62 = underscore underscore underscore underscore
