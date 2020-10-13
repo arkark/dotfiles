@@ -40,7 +40,7 @@
     # Remove all ignored files
     rm-gitignore = !git rm --cached `git ls-files --full-name --ignored --exclude-from=.gitignore`
     # Delete all merged branches
-    dmerged = !git branch --merged | egrep -v '^\\*|master$|develop$' | xargs $XARGS_NO_RUN_IF_EMPTY git branch -d
+    dmerged = !git branch --merged | egrep -v '^\\*|main$|master$|develop$' | xargs $XARGS_NO_RUN_IF_EMPTY git branch -d
     # List an output of `git ls-files` in a tree-like format
     #   treeify: https://github.com/dzamlo/treeify
     #   $ git tree *.cpp
