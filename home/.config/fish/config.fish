@@ -91,6 +91,7 @@ end
 # bat
 #   https://github.com/sharkdp/bat
 if type bat >/dev/null 2>&1
+    alias batp="bat -p"
     alias cat="bat -pp"
 end
 
