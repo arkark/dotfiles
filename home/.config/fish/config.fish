@@ -113,6 +113,12 @@ function gcd --description "cd in a git repository"
     end
 end
 
+# open
+if type kde-open >/dev/null 2>&1
+    # for KDE
+    alias open="kde-open"
+end
+
 # pbcopy/pbpaste
 if type xsel >/dev/null 2>&1
     alias pbcopy="xsel --clipboard --input"
