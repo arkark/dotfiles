@@ -8,14 +8,15 @@ if [ ! -d "$HOME/dotfiles" ]; then
 fi
 
 DOT_PATHS=(                  \
-    .Xmodmap                 \
     .bash_profile            \
     .bashrc                  \
+    .hyper.js                \
     .gdbinit                 \
     .gitconfig               \
     .gitignore_global        \
     .inputrc                 \
     .imwheelrc               \
+    .Xmodmap                 \
     .emmet/snippets.json     \
     .config/nvim             \
     .config/fish/config.fish \
