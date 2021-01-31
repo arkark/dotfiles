@@ -157,9 +157,16 @@ module.exports = {
   // to load it and avoid it being `npm install`ed
   localPlugins: [],
 
+  // default: https://github.com/vercel/hyper/tree/master/app/keymaps
   keymaps: {
     // Example
     // 'window:devtools': 'cmd+alt+o',
     "zoom:in": "ctrl+shift+-",
+    "tab:next": [
+      "shift+right",
+    ],
+    "tab:prev": [
+      "shift+left",
+    ],
   },
 };
