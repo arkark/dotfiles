@@ -174,6 +174,8 @@ alias giit="git"
 alias giiit="git"
 alias code.="code ."
 alias ks="ls"
+alias cd.="cd ."
+alias cd..="cd .."
 
 # fish settings
 function fish_greeting
