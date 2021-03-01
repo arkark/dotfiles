@@ -167,6 +167,9 @@ end
 # shortcut commands
 alias e="exit"
 alias g="git"
+if type ptpython >/dev/null 2>&1
+    alias ptp="ptpython"
+end
 
 # typo
 alias gits="git s"
