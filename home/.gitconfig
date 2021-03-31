@@ -54,4 +54,5 @@
 
 # custom subcommands
     # history <file>                                  : https://github.com/pomber/git-history
+    # hist <file>                                     : https://github.com/arkark/git-hist
     # exec --revision|-r <rev> <command> [<args> ...] : https://github.com/10sr/git-exec
