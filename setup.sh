@@ -8,8 +8,6 @@ if [ ! -d "$HOME/dotfiles" ]; then
 fi
 
 DOT_PATHS=(                  \
-    .bash_profile            \
-    .bashrc                  \
     .hyper.js                \
     .gdbinit                 \
     .gitconfig               \
