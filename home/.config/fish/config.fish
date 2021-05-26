@@ -18,7 +18,7 @@ if test -d $HOME/.pyenv
     set -x PATH $PYENV_ROOT/bin $PATH
 end
 if type pyenv >/dev/null 2>&1
-    pyenv init - | source
+    status is-login; and pyenv init --path | source
 end
 
 # rbenv
