@@ -32,11 +32,6 @@ if test -d $HOME/.cargo/bin
     set -x PATH $HOME/.cargo/bin $PATH
 end
 
-# D
-if test -d $HOME/dlang/dmd-2.089.0/linux/bin64
-    set -x PATH $HOME/dlang/dmd-2.089.0/linux/bin64 $PATH
-end
-
 # Go
 set -x GOPATH $HOME/.go
 if test -d /usr/local/go/bin
