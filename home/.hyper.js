@@ -112,6 +112,8 @@ module.exports = {
     // for environment variables
     env: {},
 
+    scrollback: 10000, // default: 1000
+
     // set to `false` for no bell
     bell: 'SOUND',
 
@@ -138,6 +140,10 @@ module.exports = {
     webGLRenderer: true,
 
     // for advanced config flags please refer to https://hyper.is/#cfg
+
+    hyperLinks: {
+      clickAction: 'ignore',
+    },
   },
 
   // a list of plugins to fetch and install from npm
