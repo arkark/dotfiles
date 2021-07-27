@@ -167,6 +167,7 @@ end
 # shortcut commands
 alias e="exit"
 alias g="git"
+alias k="kubectl"
 if type ptpython >/dev/null 2>&1
     alias ptp="ptpython"
 end
