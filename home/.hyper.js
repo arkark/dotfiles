@@ -2,6 +2,7 @@
 
 module.exports = {
   config: {
+    shell: "/usr/bin/fish",
     fontFamily: '"Comic Code", "JetBrains Mono", monospace',
     uiFontFamily: '"Comic Code", "JetBrains Mono", monospace',
     cursorBlink: true,
