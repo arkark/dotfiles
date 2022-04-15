@@ -14,8 +14,11 @@ format = """\
     $line_break\
     $jobs\
     $battery\
+    $status\
     $character\
     """
+
+command_timeout = 1000 # default: 500
 
 [directory]
 truncation_length = 3
@@ -25,3 +28,8 @@ fish_style_pwd_dir_length = 1
 [time]
 disabled = false
 style = "#aaaaaa"
+
+[status]
+disabled = false
+style = "fg:yellow"
+format = '[\[$status\]]($style) '
