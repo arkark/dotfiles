@@ -38,3 +38,10 @@ if type gradle >/dev/null 2>&1
     curl -L https://raw.githubusercontent.com/fish-shell/fish-shell/3.5.0/share/completions/gradle.fish -o ~/.config/fish/completions/gradle.fish \
         && echo -e "\e[32m-> succeeded\e[0m"
 end
+
+# deno
+if type deno >/dev/null 2>&1
+    echo -e "\e[36m ~/.config/fish/completions/deno.fish\e[0m"
+    deno completions fish >~/.config/fish/completions/deno.fish \
+        && echo -e "\e[32m-> succeeded\e[0m"
+end
