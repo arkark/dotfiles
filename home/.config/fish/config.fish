@@ -146,7 +146,7 @@ if test -d /usr/local/opt/gnu-sed/libexec/gnubin
 end
 
 # xargs
-if man xargs | grep GNU -q
+if not man xargs | head -n 2 | grep BSD -q
     set -x XARGS_NO_RUN_IF_EMPTY --no-run-if-empty
 end
 
