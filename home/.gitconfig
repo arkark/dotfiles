@@ -3,7 +3,6 @@
     email = target.ark@gmail.com
 [core]
     editor = vim
-    excludesfile = ~/.gitignore_global
 [init]
     defaultBranch = main
 [fetch]

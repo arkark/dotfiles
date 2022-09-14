@@ -11,11 +11,11 @@ DOT_PATHS=(                  \
     .hyper.js                \
     .gdbinit                 \
     .gitconfig               \
-    .gitignore_global        \
     .inputrc                 \
     .imwheelrc               \
     .Xmodmap                 \
     .emmet/snippets.json     \
+    .config/git              \
     .config/nvim             \
     .config/fish/config.fish \
     .config/starship.toml    \
