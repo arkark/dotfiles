@@ -181,8 +181,6 @@ end
 
 # typo
 alias gits="git s"
-alias giit="git"
-alias giiit="git"
 alias code.="code ."
 alias ks="ls"
 alias cd.="cd ."
