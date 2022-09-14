@@ -100,6 +100,13 @@ function mkcd --description "mkdir + cd"
     mkdir $argv && cd $argv[-1]
 end
 
+# mksage
+if type pyenv >/dev/null 2>&1
+    function mksage --description "prepare for SageMath"
+        mkdir .vscode && echo '{ "editor.formatOnSave": false }' >.vscode/settings.json && pyenv local system
+    end
+end
+
 # cd in a git repository
 function gcd --description "cd in a git repository"
     if git rev-parse --show-toplevel >/dev/null
