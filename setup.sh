@@ -15,6 +15,7 @@ DOT_PATHS=(                  \
     .imwheelrc               \
     .Xmodmap                 \
     .emmet/snippets.json     \
+    .sage/init.sage          \
     .config/git              \
     .config/nvim             \
     .config/fish/config.fish \
