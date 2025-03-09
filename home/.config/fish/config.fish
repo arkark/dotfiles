@@ -18,7 +18,7 @@ if test -d $HOME/.pyenv
     set -x PATH $PYENV_ROOT/bin $PATH
 end
 if type pyenv >/dev/null 2>&1
-    status is-login; and pyenv init --path | source
+    pyenv init - | source
 end
 
 # rbenv
@@ -140,11 +140,7 @@ function mp42gif --description "Convert mp4 to gif with gifski"
         echo "    mp42gif <INPUT_FILE> <OUTPUT_FILE>"
         return 1
     end
-    set --local tmpdir (mktemp -d --tmpdir mp42gif.XXXXXXXXXX) && \
-        ffmpeg -i $argv[1] -an -r 30 $tmpdir/%04d.png && \
-        gifski -o $tmpdir/tmp.gif --fps 30 $tmpdir/*.png && \
-        gifsicle -i $tmpdir/tmp.gif -O3 --colors 256 -o $argv[2] && \
-        rm -r $tmpdir
+    set --local tmpdir (mktemp -d --tmpdir mp42gif.XXXXXXXXXX) && ffmpeg -i $argv[1] -an -r 30 $tmpdir/%04d.png && gifski -o $tmpdir/tmp.gif --fps 30 $tmpdir/*.png && gifsicle -i $tmpdir/tmp.gif -O3 --colors 256 -o $argv[2] && rm -r $tmpdir
 end
 
 # gsed
