@@ -8,13 +8,10 @@ if [ ! -d "$HOME/dotfiles" ]; then
 fi
 
 DOT_PATHS=(                  \
-    .hyper.js                \
-    .gdbinit                 \
     .gitconfig               \
     .inputrc                 \
     .imwheelrc               \
     .Xmodmap                 \
-    .emmet/snippets.json     \
     .sage/init.sage          \
     .config/git              \
     .config/nvim             \
