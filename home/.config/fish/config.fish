@@ -12,7 +12,7 @@ if test -d $HOME/app/bin
     set -x PATH $HOME/app/bin $PATH
 end
 
-# pyenv
+# pyenv (deprecated)
 if test -d $HOME/.pyenv
     set -x PYENV_ROOT $HOME/.pyenv
     set -x PATH $PYENV_ROOT/bin $PATH
@@ -21,15 +21,15 @@ if type pyenv >/dev/null 2>&1
     pyenv init - | source
 end
 
+# uv (python)
+if type uv >/dev/null 2>&1
+    alias python="uv run python"
+end
+
 # rbenv
 if test -d $HOME/.rbenv
     set -x PATH $HOME/.rbenv/bin $PATH
     rbenv init - | source
-end
-
-# Rust (Cargo)
-if test -d $HOME/.cargo/bin
-    set -x PATH $HOME/.cargo/bin $PATH
 end
 
 # Go
@@ -48,19 +48,14 @@ end
 
 # n
 #   https://github.com/tj/n
-if type n >/dev/null 2>&1
-    set -x N_PREFIX $HOME/.n-prefix
+set -x N_PREFIX $HOME/.n-prefix
+if test -d $N_PREFIX/bin
     set -x PATH $N_PREFIX/bin $PATH
 end
 
 # deno
 if test -d $HOME/.deno/bin
     set -x PATH $HOME/.deno/bin $PATH
-end
-
-# GCP
-if test -d /usr/local/Caskroom/google-cloud-sdk
-    source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
 end
 
 # pdfpc
@@ -76,16 +71,16 @@ if type starship >/dev/null 2>&1
     starship init fish | source
 end
 
-# exa
-#   https://github.com/ogham/exa
-if type exa >/dev/null 2>&1
-    alias ls="exa"
-    alias ll="exa --long --header --git"
-    alias la="exa --long --header --git -a"
-    alias l="exa"
-    alias lt="exa --tree"
-    alias llt="exa --long --header --git --tree"
-    alias lat="exa --long --header --git -a --tree"
+# eza
+#   https://github.com/eza-community/eza
+if type eza >/dev/null 2>&1
+    alias ls="eza"
+    alias ll="eza --long --header --git"
+    alias la="eza --long --header --git -a"
+    alias l="eza"
+    alias lt="eza --tree"
+    alias llt="eza --long --header --git --tree"
+    alias lat="eza --long --header --git -a --tree"
 end
 
 # bat
@@ -101,10 +96,13 @@ function mkcd --description "mkdir + cd"
 end
 
 # mksage
-if type pyenv >/dev/null 2>&1
+if type pyenv >/dev/null 2>&1 # (deprecated)
     function mksage --description "prepare for SageMath"
         mkdir .vscode && echo '{ "editor.formatOnSave": false }' >.vscode/settings.json && pyenv local system
     end
+end
+if type uv >/dev/null 2>&1
+    # TODO
 end
 
 # cd in a git repository
@@ -171,9 +169,6 @@ end
 alias e="exit"
 alias g="git"
 alias k="kubectl"
-if type ptpython >/dev/null 2>&1
-    alias ptp="ptpython"
-end
 
 # typo
 alias gits="git s"
