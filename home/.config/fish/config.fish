@@ -123,6 +123,17 @@ if type kde-open >/dev/null 2>&1
     # for KDE
     alias open="kde-open"
 end
+if type explorer.exe >/dev/null 2>&1
+    # for WSL
+    function open
+        if test (count $argv) -ne 1
+            echo "Usage: "
+            echo "    open <OPEN_DIRECTORY>"
+            return 1
+        end
+        explorer.exe (wslpath -w $argv[1])
+    end
+end
 
 # pbcopy/pbpaste
 if type xsel >/dev/null 2>&1
